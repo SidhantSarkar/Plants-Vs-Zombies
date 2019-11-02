@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainMenu">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img_Assets/bg.jpeg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="600.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="180.0" prefWidth="200.0" />
+            <Button alignment="CENTER" graphicTextGap="5.0" maxHeight="45.0" maxWidth="210.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="START" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="120.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="10.0" layoutY="10.0" maxHeight="45.0" maxWidth="210.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="LOAD GAME" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="120.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="10.0" layoutY="64.0" maxHeight="45.0" maxWidth="210.0" mnemonicParsing="false" onAction="#chooseLevel" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="CHOOSE LEVEL" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="120.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="10.0" layoutY="119.0" maxHeight="45.0" maxWidth="210.0" mnemonicParsing="false" onAction="#exit" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="EXIT" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="120.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
