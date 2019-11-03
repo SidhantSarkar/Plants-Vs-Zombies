@@ -4,17 +4,23 @@ import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Game implements Initializable {
 
     @FXML
     private Circle pea_1;
+
+    @FXML
+    private Label countDown;
 
     @FXML
     private Circle pea_2;
@@ -30,6 +36,8 @@ public class Game implements Initializable {
 
     @FXML
     private ImageView zombie2;
+
+    private int i = 300;
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -66,6 +74,27 @@ public class Game implements Initializable {
 
         ParallelTransition seqT = new ParallelTransition(peaTransition,peaTransition2,zombieTransition,zombieTransition2);
         seqT.play();
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                javafx.application.Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        countDown.setText(returnTime(i--));
+                    }
+                });
+            }
+        }, 0, 1000);
+    }
+
+    public String returnTime(int totalSecs) {
+
+        int minutes = (totalSecs % 3600) / 60;
+        int seconds = totalSecs % 60;
+
+        return String.format("%02d:%02d", minutes, seconds);
     }
 
 

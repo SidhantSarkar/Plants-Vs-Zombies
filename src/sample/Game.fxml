@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.effect.Light.Distant?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Game">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Game">
    <children>
       <ImageView id="Background blurred" fitHeight="704.0" fitWidth="943.0" layoutX="-39.0" layoutY="-103.0" pickOnBounds="true">
          <image>
@@ -91,10 +92,13 @@
             <Image url="@Img_Assets/namePlate.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="541.0" layoutY="36.0" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #524533; -fx-background-radius: 20px; -fx-label-padding: 5px;" text="4:59" textAlignment="CENTER" textFill="#e1dcdc">
+      <Label fx:id="countDown" alignment="CENTER" contentDisplay="CENTER" layoutX="541.0" layoutY="35.0" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #524533; -fx-background-radius: 20px; -fx-label-padding: 1px;" text="4:59" textAlignment="CENTER" textFill="#e1dcdc">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="25.0" />
          </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </Label>
       <GridPane alignment="CENTER" layoutY="104.0" prefHeight="399.0" prefWidth="725.0" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="104.0">
         <columnConstraints>
