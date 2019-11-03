@@ -50,6 +50,8 @@ public class Game implements Initializable {
 
     private int i = 300;
     private ParallelTransition seqT;
+    private boolean stopFlag;
+
     @Override
     public void initialize(URL url, ResourceBundle rb){
         // Animation 1
@@ -85,6 +87,7 @@ public class Game implements Initializable {
 
         seqT = new ParallelTransition(peaTransition,peaTransition2,zombieTransition,zombieTransition2);
         seqT.play();
+        this.stopFlag = false;
 
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -93,7 +96,8 @@ public class Game implements Initializable {
                 javafx.application.Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        countDown.setText(returnTime(i--));
+                        if(!stopFlag)
+                            countDown.setText(returnTime(i--));
                     }
                 });
             }
@@ -103,6 +107,7 @@ public class Game implements Initializable {
 
     public void inGameMenu(){
         seqT.pause();
+        this.stopFlag = true;
         inGameMenu.setVisible(true);
 
     }
@@ -115,10 +120,9 @@ public class Game implements Initializable {
     }
     public void resumeGame(){
         seqT.play();
+        this.stopFlag = false;
         inGameMenu.setVisible(false);
     }
-
-
 
     public String returnTime(int totalSecs) {
 
