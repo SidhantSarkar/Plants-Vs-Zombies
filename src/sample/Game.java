@@ -2,13 +2,21 @@ package sample;
 
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
@@ -37,8 +45,11 @@ public class Game implements Initializable {
     @FXML
     private ImageView zombie2;
 
-    private int i = 300;
+    @FXML
+    private AnchorPane inGameMenu;
 
+    private int i = 300;
+    private ParallelTransition seqT;
     @Override
     public void initialize(URL url, ResourceBundle rb){
         // Animation 1
@@ -72,7 +83,7 @@ public class Game implements Initializable {
 
 
 
-        ParallelTransition seqT = new ParallelTransition(peaTransition,peaTransition2,zombieTransition,zombieTransition2);
+        seqT = new ParallelTransition(peaTransition,peaTransition2,zombieTransition,zombieTransition2);
         seqT.play();
 
         Timer timer = new Timer();
@@ -89,6 +100,26 @@ public class Game implements Initializable {
         }, 0, 1000);
     }
 
+
+    public void inGameMenu(){
+        seqT.pause();
+        inGameMenu.setVisible(true);
+
+    }
+    public void returnToMainMenu(Event mouseEvent) throws IOException{
+
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        stage.setScene(new Scene(root));
+
+    }
+    public void resumeGame(){
+        seqT.play();
+        inGameMenu.setVisible(false);
+    }
+
+
+
     public String returnTime(int totalSecs) {
 
         int minutes = (totalSecs % 3600) / 60;
@@ -96,6 +127,5 @@ public class Game implements Initializable {
 
         return String.format("%02d:%02d", minutes, seconds);
     }
-
 
 }

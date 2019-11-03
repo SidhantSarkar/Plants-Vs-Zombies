@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
@@ -15,11 +17,12 @@
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Game">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Game">
    <children>
-      <ImageView id="Background blurred" fitHeight="704.0" fitWidth="943.0" layoutX="-39.0" layoutY="-103.0" pickOnBounds="true">
+      <ImageView id="Background blurred" fitHeight="704.0" fitWidth="939.0" layoutX="-39.0" layoutY="-103.0" pickOnBounds="true">
          <image>
             <Image url="@Img_Assets/gameplay.jpg" />
          </image>
@@ -82,7 +85,7 @@
             <Font name="Franklin Gothic Heavy" size="32.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="698.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9">
+      <ImageView fx:id="menuButton" fitHeight="150.0" fitWidth="200.0" layoutX="698.0" layoutY="27.0" onMouseClicked="#inGameMenu" pickOnBounds="true" preserveRatio="true" scaleX="0.9" scaleY="0.9">
          <image>
             <Image url="@Img_Assets/plants/MenuButton.png" />
          </image>
@@ -190,5 +193,45 @@
             </ImageView>
          </children>
       </GridPane>
+      <AnchorPane fx:id="inGameMenu" prefHeight="601.0" prefWidth="900.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="603.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" width="904.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#383a59" height="389.0" layoutX="150.0" layoutY="103.0" stroke="#202136" strokeType="INSIDE" strokeWidth="5.0" width="607.0" />
+            <ImageView fitHeight="105.0" fitWidth="268.0" layoutX="323.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img_Assets/namePlate.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="348.0" layoutY="161.0" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: #524533;" text="MENU" textAlignment="CENTER" textFill="#97db2e">
+               <font>
+                  <Font name="Franklin Gothic Heavy" size="35.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="354.0" layoutY="240.0" maxHeight="45.0" maxWidth="210.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="SAVE" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="355.0" layoutY="316.0" maxHeight="45.0" maxWidth="210.0" mnemonicParsing="false" onAction="#resumeGame" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="RESUME" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="317.0" layoutY="406.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="EXIT TO MAIN MENU" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
