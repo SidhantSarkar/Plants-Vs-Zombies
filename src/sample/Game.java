@@ -11,5 +11,5 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class Game {
-    
+
 }
