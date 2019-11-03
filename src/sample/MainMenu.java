@@ -31,4 +31,11 @@ public class MainMenu {
         Parent root = FXMLLoader.load(getClass().getResource("LoadGame.fxml"));
         stage.setScene(new Scene(root));
     }
+
+    @FXML
+    public void start(Event mouseEvent) throws IOException {
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        stage.setScene(new Scene(root));
+    }
 }
