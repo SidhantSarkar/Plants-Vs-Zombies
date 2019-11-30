@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a461646-0876-4e12-a7c6-37c77bf92871" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sample/Img_Assets/plants/doublePeaShooter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/Img_Assets/plants/doublePeaShooterButton.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +79,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
