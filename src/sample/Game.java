@@ -339,7 +339,6 @@ class Plant {
                         if(!reference.stopFlag){
                             zombieInRowArray.forEach(zombie -> {
                                 if(temp.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
-                                    System.out.println("Hit hua");
                                     temp.setRadius(0);
                                     temp.setTranslateZ(10);
                                     zombie.health--;
