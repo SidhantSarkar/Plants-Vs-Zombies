@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a461646-0876-4e12-a7c6-37c77bf92871" name="Default Changelist" comment="Merge branch 'master' of https://github.com/SidhantSarkar/PlantsVsZombies&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower$1$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower$2$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower$2.class&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$1$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$2.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$3.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$4$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant.class&#10;#&#9;out/production/PlantsVsZombies/sample/Zombie$1$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Zombie$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Zombie.class">
-      <change afterPath="$PROJECT_DIR$/src/sample/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Actors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$4$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Game.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +33,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
