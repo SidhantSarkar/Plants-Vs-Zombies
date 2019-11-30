@@ -177,7 +177,7 @@ public class Game implements Initializable {
             db.setContent(cb);
         }
         if(source.equals("sunFlowerPlant")){
-            Image img = new Image(".\\sample\\Img_Assets\\plants\\sunflower_instance.jpg",60,60,true,true);
+            Image img = new Image(".\\sample\\Img_Assets\\plants\\sunflower_instance.png",60,60,true,true);
             cb.putImage(img);
             db.setContent(cb);
         }
