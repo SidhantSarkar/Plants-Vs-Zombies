@@ -29,6 +29,21 @@ import java.util.*;
 
 public class Game implements Initializable {
     @FXML
+    private AnchorPane gameWonMenu;
+
+    @FXML
+    private ImageView BG_level2_top;
+
+    @FXML
+    private ImageView BG_level2_bottom;
+
+    @FXML
+    private ImageView BG_level1_bottom;
+
+    @FXML
+    private ImageView BG_level1_top;
+
+    @FXML
     private Label countDown;
 
     @FXML
@@ -68,14 +83,107 @@ public class Game implements Initializable {
     int sunTokenGen = 0;
     int currency = 0;
     String selected = "";
+    int level = 1;
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-//        Level
-        for (int j=0;j<5;j++){
-            zombieGrid.add(new ArrayList<Zombie>());
-            LawnMower temp = new LawnMower(this,j);
+
+        level=1;
+        try{
+            String filePath = new File("").getAbsolutePath().concat("\\src\\sample\\level.txt");
+            File file = new File(filePath);
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            level = Integer.parseInt(br.readLine());
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
+
+        for (int i = 0; i < 5; i++) {
+            zombieGrid.add(new ArrayList<Zombie>());
+        }
+        switch (level){
+            case 2:
+            case 3:
+                for (int i = 1; i < 4; i++) {
+                    LawnMower temp = new LawnMower(this,i);
+                }
+                BG_level1_bottom.setVisible(false);
+                BG_level1_top.setVisible(false);
+                doublePeaShooter.setVisible(false);
+                cherryBomb.setVisible(false);
+                break;
+            case 4:
+            case 5:
+                for (int i = 0; i < 5; i++) {
+                    LawnMower temp = new LawnMower(this,i);
+                }
+                BG_level1_bottom.setVisible(false);
+                BG_level1_top.setVisible(false);
+                BG_level2_bottom.setVisible(false);
+                BG_level2_top.setVisible(false);
+                break;
+            default:
+                for (int i = 2; i < 3; i++) {
+                    LawnMower temp = new LawnMower(this,i);
+                }
+                BG_level2_bottom.setVisible(false);
+                BG_level2_top.setVisible(false);
+                sunFlowerPlant.setVisible(false);
+                doublePeaShooter.setVisible(false);
+                potatoBarrier.setVisible(false);
+                cherryBomb.setVisible(false);
+                break;
+        }
+
+//        path blocking and plant buttons and timer
+        switch (level){
+            case 2:
+                frequency=9000;
+                timerSeconds=120;
+                BG_level1_bottom.setVisible(false);
+                BG_level1_top.setVisible(false);
+                doublePeaShooter.setVisible(false);
+                cherryBomb.setVisible(false);
+                potatoBarrier.setVisible(false);
+                break;
+            case 3:
+                frequency=8500;
+                timerSeconds=180;
+                BG_level1_bottom.setVisible(false);
+                BG_level1_top.setVisible(false);
+                doublePeaShooter.setVisible(false);
+                cherryBomb.setVisible(false);
+                break;
+            case 4:
+                frequency=8000;
+                timerSeconds=240;
+                BG_level1_bottom.setVisible(false);
+                BG_level1_top.setVisible(false);
+                BG_level2_bottom.setVisible(false);
+                BG_level2_top.setVisible(false);
+                doublePeaShooter.setVisible(false);
+                break;
+            case 5:
+                frequency=7000;
+                BG_level1_bottom.setVisible(false);
+                BG_level1_top.setVisible(false);
+                BG_level2_bottom.setVisible(false);
+                BG_level2_top.setVisible(false);
+                break;
+            default:
+                timerSeconds=60;
+                BG_level2_bottom.setVisible(false);
+                BG_level2_top.setVisible(false);
+                sunFlowerPlant.setVisible(false);
+                doublePeaShooter.setVisible(false);
+                potatoBarrier.setVisible(false);
+                cherryBomb.setVisible(false);
+                break;
+        }
+
+//        Level
+
 
         this.stopFlag = false;
         Random seed =  new Random();
@@ -93,7 +201,7 @@ public class Game implements Initializable {
                                 generateSunToken(seed);
                             frequency-=2;
 //                        Change sun token Frequency
-                            sunTokenGen = (sunTokenGen+1)%8;
+                            sunTokenGen = (sunTokenGen+1)%4;
                         }
                         if(timerSeconds==0){
 //                           LEVEL WIN
@@ -171,6 +279,20 @@ public class Game implements Initializable {
 
     public void levelClear() {
         System.out.println("Tum Jeet Gaye");
+        stopFlag=true;
+        gameWonMenu.setVisible(true);
+    }
+
+    public void nextLevel(Event mouseEvent) throws IOException{
+        String filePath = new File("").getAbsolutePath().concat("\\src\\sample\\level.txt");
+        PrintWriter out = new PrintWriter( new FileWriter(filePath));
+        level++;
+        out.println(Integer.toString(level));
+        out.close();
+
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        stage.setScene(new Scene(root));
     }
 
     public void generateSunToken(Random seed){
@@ -215,9 +337,25 @@ public class Game implements Initializable {
                     public void run() {
 //                       Level Selector
                         if(!stopFlag){
-                            int temp = seed.nextInt(5);
-                            Zombie genZombie = new Zombie(gameGrid, ref, temp);
-                            zombieGrid.get(temp).add(genZombie);
+                            switch (level){
+                                case 2:
+                                case 3:
+                                    int temp = seed.nextInt(3) + 1;
+                                    Zombie genZombie2 = new Zombie(gameGrid, ref, temp);
+                                    zombieGrid.get(temp).add(genZombie2);
+                                    break;
+                                case 4:
+                                case 5:
+                                    int temp2 = seed.nextInt(5);
+                                    Zombie genZombie3 = new Zombie(gameGrid, ref, temp2);
+                                    zombieGrid.get(temp2).add(genZombie3);
+                                    break;
+                                default:
+                                    Zombie genZombie = new Zombie(gameGrid, ref, 2);
+                                    zombieGrid.get(2).add(genZombie);
+                                    break;
+                            }
+
                         }
                     }
                 });
@@ -303,10 +441,6 @@ public class Game implements Initializable {
             cb.putImage(img);
             db.setContent(cb);
         }
-
-//        Collision Detection
-//        System.out.println(peaShooter2.getBoundsInParent().intersects(zombie1.getBoundsInParent()));
-//        System.out.println(zombie1.getBoundsInParent().intersects(pea_2.getBoundsInParent()));
 
         event.consume();
     }
@@ -401,7 +535,7 @@ public class Game implements Initializable {
                         @Override
                         public void run() {
                             if(!stopFlag){
-                                temp.genSunAnim(timer);
+                                temp.doublePeaAnim(timer);
                             }
                         }
                     });
@@ -414,22 +548,9 @@ public class Game implements Initializable {
             Plant temp = new Plant(x,y, source, pea_2, zombieGrid.get(x), this);
             currency -= 150;
             Timer timer = new Timer();
-            timer.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-                    javafx.application.Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            if(!stopFlag){
-                                temp.genSunAnim(timer);
-                            }
-                        }
-                    });
-                }
-            }, 2000, 6000);
+            temp.cherryBomb(timer);
         }
         sunTokenLabel.setText(String.valueOf(currency));
-
     }
 
     public void removeZombie(Zombie temp) {
@@ -525,6 +646,141 @@ class Plant {
                 });
             }
         }, 0, 150);
+    }
+
+    public void doublePeaAnim(Timer _timer) {
+        mainTimer = _timer;
+
+        Circle temp =  new Circle(absX,absY,10,copy.getFill());
+        temp.setStroke(copy.getStroke());
+        temp.setStrokeWidth(copy.getStrokeWidth());
+        temp.setStrokeType(copy.getStrokeType());
+        parent.add(temp,y,x);
+        temp.setTranslateX(25);
+        temp.setTranslateY(-12);
+        temp.toBack();
+
+        Circle temp2 =  new Circle(absX,absY,10,copy.getFill());
+        temp2.setStroke(copy.getStroke());
+        temp2.setStrokeWidth(copy.getStrokeWidth());
+        temp2.setStrokeType(copy.getStrokeType());
+        parent.add(temp2,y,x);
+        temp2.setTranslateX(25);
+        temp2.setTranslateY(-12);
+        temp2.toBack();
+
+        TranslateTransition peaTransition = new TranslateTransition();
+        peaTransition.setDuration(Duration.millis(2200));
+        peaTransition.setNode(temp);
+        peaTransition.setToX(700);
+        peaTransition.setCycleCount(1);
+        peaTransition.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                temp.setRadius(0);
+                temp.setTranslateZ(10);
+
+                reference.gameGrid.getChildren().remove(temp);
+                anim.getChildren().remove(peaTransition);
+            }
+        });
+
+        anim.getChildren().add(peaTransition);
+        anim.play();
+
+        ParallelTransition anim2 = new ParallelTransition();
+        TranslateTransition peaTransition2 = new TranslateTransition();
+        peaTransition2.setDuration(Duration.millis(2200));
+        peaTransition2.setNode(temp2);
+        peaTransition2.setToX(700);
+        peaTransition2.setCycleCount(1);
+        peaTransition2.setDelay(Duration.millis(500));
+        peaTransition2.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                temp2.setRadius(0);
+                temp2.setTranslateZ(10);
+
+                reference.gameGrid.getChildren().remove(temp2);
+                anim2.getChildren().remove(peaTransition2);
+            }
+        });
+
+        anim2.getChildren().add(peaTransition2);
+        anim2.play();
+
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                javafx.application.Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(!reference.stopFlag){
+                            zombieInRowArray.forEach(zombie -> {
+                                if(temp.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
+                                    anim.stop();
+                                    timer.cancel();
+                                    timer.purge();
+                                    temp.setRadius(0);
+                                    temp.setTranslateZ(10);
+                                    reference.gameGrid.getChildren().remove(temp);
+                                    zombie.health--;
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        }, 0, 150);
+
+        Timer timer2 = new Timer();
+        timer2.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                javafx.application.Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(!reference.stopFlag){
+                            zombieInRowArray.forEach(zombie -> {
+                                if(temp2.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
+                                    anim2.stop();
+                                    timer2.cancel();
+                                    timer2.purge();
+                                    temp2.setRadius(0);
+                                    temp2.setTranslateZ(10);
+                                    reference.gameGrid.getChildren().remove(temp2);
+                                    zombie.health--;
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        }, 0, 150);
+    }
+
+    public void cherryBomb(Timer _timer) {
+        mainTimer = _timer;
+        Rectangle rec = new Rectangle();
+        rec.setHeight(180);
+        rec.setWidth(180);
+        parent.add(rec,y,x);
+        rec.setX(container.getLayoutX());
+        rec.setY(container.getLayoutY());
+        rec.setTranslateX(-55);
+        rec.setVisible(false);
+
+        reference.zombieGrid.forEach(array -> {
+            array.forEach(zombie -> {
+                if(rec.getBoundsInLocal().intersects(zombie.zombieSpawner.getBoundsInParent())){
+                    zombie.health = 0;
+                }
+            });
+        });
+
+        parent.getChildren().remove(rec);
+        parent.getChildren().remove(container);
     }
 
     public void genSunAnim(Timer _timer){
@@ -750,4 +1006,5 @@ class LawnMower{
             }
         }, 0, 200);
     }
+
 }

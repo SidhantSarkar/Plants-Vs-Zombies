@@ -32,7 +32,7 @@
             <Image url="@Img_Assets/gameplay.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="sunFlowerPlant" fitHeight="150.0" fitWidth="200.0" layoutX="-24.0" onDragDetected="#handleDragDetection" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+      <ImageView fx:id="sunFlowerPlant" fitHeight="150.0" fitWidth="200.0" layoutX="-24.0" layoutY="64.0" onDragDetected="#handleDragDetection" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
          <image>
             <Image url="@Img_Assets/plants/sunflower.png" />
          </image>
@@ -57,7 +57,7 @@
             <Image url="@Img_Assets/plants/doublePeaShooterButton.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="peaShooterPlant" fitHeight="150.0" fitWidth="200.0" layoutX="-22.0" layoutY="68.0" onDragDetected="#handleDragDetection" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+      <ImageView fx:id="peaShooterPlant" fitHeight="150.0" fitWidth="200.0" layoutX="-24.0" layoutY="1.0" onDragDetected="#handleDragDetection" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
          <image>
             <Image url="@Img_Assets/plants/peaShooter.png" />
          </image>
@@ -162,23 +162,46 @@
             <ImageView fx:id="peaShooter113413" fitHeight="75.0" fitWidth="69.0" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="4" />
             <ImageView fx:id="peaShooter113513" fitHeight="75.0" fitWidth="69.0" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="4" />
             <ImageView fx:id="peaShooter1143" fitHeight="75.0" fitWidth="69.0" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+            <ImageView id="BG_level2_top" fx:id="BG_level2_top" fitHeight="112.0" fitWidth="639.0" pickOnBounds="true" preserveRatio="true" translateX="-13.0" translateY="-15.0" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@Img_Assets/plants/BG_level2(top).png" />
+               </image>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView id="BG_level2_bottom" fx:id="BG_level2_bottom" fitHeight="94.0" fitWidth="646.0" pickOnBounds="true" preserveRatio="true" translateX="-17.0" translateY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@Img_Assets/plants/BG_level2(BOTTOM).png" />
+               </image>
+            </ImageView>
+            <ImageView id="BG_level1_bottom" fx:id="BG_level1_bottom" fitHeight="171.0" fitWidth="654.0" pickOnBounds="true" preserveRatio="true" translateX="-20.0" translateY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@Img_Assets/plants/BG_level1(BOTTOM).png" />
+               </image>
+            </ImageView>
+            <ImageView id="BG_level1_top" fx:id="BG_level1_top" fitHeight="191.0" fitWidth="638.0" pickOnBounds="true" preserveRatio="true" translateX="-80.0" translateY="-50.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@Img_Assets/plants/BG_level1(top).png" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
-      <AnchorPane fx:id="inGameMenu" prefHeight="601.0" prefWidth="900.0" visible="false">
+      <AnchorPane fx:id="gameWonMenu" prefHeight="601.0" prefWidth="900.0" visible="false">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="603.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" width="904.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#383a59" height="389.0" layoutX="150.0" layoutY="103.0" stroke="#202136" strokeType="INSIDE" strokeWidth="5.0" width="607.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#383a59" height="351.0" layoutX="150.0" layoutY="103.0" stroke="#202136" strokeType="INSIDE" strokeWidth="5.0" width="607.0" />
             <ImageView fitHeight="105.0" fitWidth="268.0" layoutX="323.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Img_Assets/namePlate.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="348.0" layoutY="161.0" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: #524533;" text="MENU" textAlignment="CENTER" textFill="#97db2e">
+            <Label alignment="CENTER" layoutX="348.0" layoutY="161.0" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: #524533;" text="YOU WIN" textAlignment="CENTER" textFill="#97db2e">
                <font>
                   <Font name="Franklin Gothic Heavy" size="35.0" />
                </font>
             </Label>
-            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="354.0" layoutY="240.0" maxHeight="45.0" maxWidth="210.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="SAVE" textAlignment="CENTER" textFill="#97db2e">
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="355.0" layoutY="256.0" maxHeight="45.0" maxWidth="210.0" mnemonicParsing="false" onAction="#nextLevel" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="CONTINUE" textAlignment="CENTER" textFill="#97db2e">
                <effect>
                   <DropShadow />
                </effect>
@@ -186,15 +209,7 @@
                   <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="355.0" layoutY="316.0" maxHeight="45.0" maxWidth="210.0" mnemonicParsing="false" onAction="#resumeGame" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="RESUME" textAlignment="CENTER" textFill="#97db2e">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
-               </font>
-            </Button>
-            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="317.0" layoutY="406.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="EXIT TO MAIN MENU" textAlignment="CENTER" textFill="#97db2e">
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="317.0" layoutY="346.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="EXIT TO MAIN MENU" textAlignment="CENTER" textFill="#97db2e">
                <effect>
                   <DropShadow />
                </effect>
@@ -227,6 +242,46 @@
                </font>
             </Button>
             <Button alignment="CENTER" graphicTextGap="5.0" layoutX="314.0" layoutY="279.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Restart Level" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="inGameMenu" layoutX="10.0" layoutY="8.0" prefHeight="601.0" prefWidth="900.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="603.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" width="904.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#383a59" height="389.0" layoutX="150.0" layoutY="103.0" stroke="#202136" strokeType="INSIDE" strokeWidth="5.0" width="607.0" />
+            <ImageView fitHeight="105.0" fitWidth="268.0" layoutX="323.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img_Assets/namePlate.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="348.0" layoutY="161.0" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: #524533;" text="MENU" textAlignment="CENTER" textFill="#97db2e">
+               <font>
+                  <Font name="Franklin Gothic Heavy" size="35.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="314.0" layoutY="393.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="EXIT TO MAIN MENU" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="314.0" layoutY="240.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#resumeGame" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="RESUME GAME" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="314.0" layoutY="317.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="SAVE GAME" textAlignment="CENTER" textFill="#97db2e">
                <effect>
                   <DropShadow />
                </effect>
