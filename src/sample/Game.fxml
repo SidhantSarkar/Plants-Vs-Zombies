@@ -135,31 +135,6 @@
                   </LinearGradient>
                </fill>
             </Circle>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" translateX="-60.0">
-               <image>
-                  <Image url="@Img_Assets/lawnmower.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" translateX="-60.0" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@Img_Assets/lawnmower.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" translateX="-60.0" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@Img_Assets/lawnmower.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" translateX="-60.0" GridPane.rowIndex="3">
-               <image>
-                  <Image url="@Img_Assets/lawnmower.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" translateX="-60.0" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@Img_Assets/lawnmower.png" />
-               </image>
-            </ImageView>
             <ImageView fx:id="peaShooter11" fitHeight="75.0" fitWidth="69.0" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <ImageView fx:id="peaShooter111" fitHeight="75.0" fitWidth="69.0" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
             <ImageView fx:id="peaShooter112" fitHeight="75.0" fitWidth="69.0" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
@@ -238,6 +213,38 @@
                </font>
             </Button>
             <Button alignment="CENTER" graphicTextGap="5.0" layoutX="317.0" layoutY="406.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="EXIT TO MAIN MENU" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="gameOverMenu" layoutY="-2.0" prefHeight="601.0" prefWidth="900.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="603.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" width="904.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#383a59" height="389.0" layoutX="150.0" layoutY="103.0" stroke="#202136" strokeType="INSIDE" strokeWidth="5.0" width="607.0" />
+            <ImageView fitHeight="105.0" fitWidth="268.0" layoutX="323.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img_Assets/namePlate.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="348.0" layoutY="161.0" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: #524533;" text="GAME OVER" textAlignment="CENTER" textFill="#97db2e">
+               <font>
+                  <Font name="Franklin Gothic Heavy" size="35.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="314.0" layoutY="380.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Exit to Main Menu" textAlignment="CENTER" textFill="#97db2e">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="314.0" layoutY="279.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Restart Level" textAlignment="CENTER" textFill="#97db2e">
                <effect>
                   <DropShadow />
                </effect>

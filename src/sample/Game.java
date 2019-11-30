@@ -17,6 +17,7 @@ import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -35,10 +36,7 @@ public class Game implements Initializable {
     private AnchorPane inGameMenu;
 
     @FXML
-    private ImageView peaShooterPlant;
-
-    @FXML
-    private ImageView sunFlowerPlant;
+    public AnchorPane gameOverMenu;
 
     @FXML
     public GridPane gameGrid;
@@ -46,23 +44,22 @@ public class Game implements Initializable {
     @FXML
     public Label sunTokenLabel;
 
-    private int i = 300;
-    private ParallelTransition seqT;
-    private boolean stopFlag;
+    private int timerSeconds = 300;
+    public boolean stopFlag;
     ArrayList<ArrayList<Zombie>> zombieGrid = new ArrayList<ArrayList<Zombie>>();
-    ArrayList<Zombie> zombieInRow = new ArrayList<Zombie>();
     int frequency = 5000;
     int sunTokenGen = 0;
     int currency = 0;
+    String selected = "";
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
+//        Level
         for (int j=0;j<5;j++){
             zombieGrid.add(new ArrayList<Zombie>());
+            LawnMower temp = new LawnMower(this,j);
         }
 
-        seqT = new ParallelTransition();
-        seqT.play();
         this.stopFlag = false;
         Random seed =  new Random();
 
@@ -73,18 +70,30 @@ public class Game implements Initializable {
                 javafx.application.Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        if(!stopFlag)
-                            countDown.setText(returnTime(i--));
-                        if(sunTokenGen == 1)
-                            generateSunToken(seed);
-                        frequency-=3;
+                        if(!stopFlag){
+                            countDown.setText(returnTime(timerSeconds--));
+                            if(sunTokenGen == 1)
+                                generateSunToken(seed);
+                            frequency-=3;
 //                        Change sun token Frequency
-                        sunTokenGen = (sunTokenGen+1)%8;
+                            sunTokenGen = (sunTokenGen+1)%8;
+                        }
+                        if(timerSeconds==0){
+//                           LEVEL WIN
+                            stopFlag=true;
+                            timer.cancel();
+                            timer.purge();
+                            levelClear();
+                        }
                     }
                 });
             }
         }, 0, 1000);
         generateZombie(seed);
+    }
+
+    public void levelClear() {
+        System.out.println("Tum Jeet Gaye");
     }
 
     public void generateSunToken(Random seed){
@@ -128,10 +137,11 @@ public class Game implements Initializable {
                     @Override
                     public void run() {
 //                       Level Selector
-                        int temp = seed.nextInt(5);
-                        Zombie genZombie = new Zombie(gameGrid, ref, temp);
-                        zombieGrid.get(temp).add(genZombie);
-                        zombieInRow.add(genZombie);
+                        if(!stopFlag){
+                            int temp = seed.nextInt(5);
+                            Zombie genZombie = new Zombie(gameGrid, ref, temp);
+                            zombieGrid.get(temp).add(genZombie);
+                        }
                     }
                 });
             }
@@ -140,7 +150,6 @@ public class Game implements Initializable {
 
 
     public void inGameMenu(){
-        seqT.pause();
         this.stopFlag = true;
         inGameMenu.setVisible(true);
 
@@ -152,8 +161,16 @@ public class Game implements Initializable {
         stage.setScene(new Scene(root));
 
     }
+
+    public void restartGame(Event mouseEvent) throws IOException{
+
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        stage.setScene(new Scene(root));
+
+    }
+
     public void resumeGame(){
-        seqT.play();
         this.stopFlag = false;
         inGameMenu.setVisible(false);
     }
@@ -173,11 +190,15 @@ public class Game implements Initializable {
 
         if(source.equals("peaShooterPlant")){
             Image img = new Image(".\\sample\\Img_Assets\\plants\\peaShooter_instance.png",60,60,true,true);
+
+            selected = "peaShooterPlant";
             cb.putImage(img);
             db.setContent(cb);
         }
         if(source.equals("sunFlowerPlant")){
             Image img = new Image(".\\sample\\Img_Assets\\plants\\sunflower_instance.jpg",60,60,true,true);
+
+            selected = "sunFlowerPlant";
             cb.putImage(img);
             db.setContent(cb);
         }
@@ -206,23 +227,49 @@ public class Game implements Initializable {
         }
 
         Image img = event.getDragboard().getImage();
+
         ImageView source = ((ImageView) event.getSource());
         source.setImage(img);
         source.setFitHeight(65);
-        Plant temp = new Plant(x,y, source, pea_2, zombieGrid.get(x), this);
 
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                javafx.application.Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        temp.genSunAnim(timer);
-                    }
-                });
-            }
-        }, 0, 6000);
+        if(selected.equals("sunFlowerPlant")){
+            Plant temp = new Plant(x,y, source, pea_2, zombieGrid.get(x), this);
+
+            Timer timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    javafx.application.Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(!stopFlag){
+                                temp.genSunAnim(timer);
+                            }
+                        }
+                    });
+                }
+            }, 2000, 6000);
+        }
+
+        if(selected.equals("peaShooterPlant")){
+            Plant temp = new Plant(x,y, source, pea_2, zombieGrid.get(x), this);
+
+            Timer timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    javafx.application.Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(!stopFlag){
+                                temp.startAnim(timer);
+                            }
+                        }
+                    });
+                }
+            }, 0, 1800);
+        }
+
     }
 
     public void removeZombie(Zombie temp) {
@@ -282,23 +329,26 @@ class Plant {
         anim.getChildren().add(peaTransition);
         anim.play();
 
+        timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 javafx.application.Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        zombieInRowArray.forEach(zombie -> {
-                            if(temp.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
-                                temp.setRadius(0);
-                                temp.setTranslateZ(10);
-                                zombie.health--;
-                                anim.stop();
-                                timer.cancel();
-                                timer.purge();
-                                return;
-                            }
-                        });
+                        if(!reference.stopFlag){
+                            zombieInRowArray.forEach(zombie -> {
+                                if(temp.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
+                                    temp.setRadius(0);
+                                    temp.setTranslateZ(10);
+                                    zombie.health--;
+                                    anim.stop();
+                                    timer.cancel();
+                                    timer.purge();
+                                    return;
+                                }
+                            });
+                        }
                     }
                 });
             }
@@ -343,24 +393,26 @@ class Plant {
                 javafx.application.Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        zombieInRowArray.forEach(zombie -> {
-                            if(container.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
-                                zombie.movementFlag=false;
-                                health--;
-                                if(health == 0){
-                                    anim.stop();
-                                    zombie.movementFlag=true;
-                                    mainTimer.cancel();
-                                    mainTimer.purge();
-                                    timer.cancel();
-                                    timer.purge();
-                                    zombieTime.cancel();
-                                    zombieTime.purge();
-                                    parent.getChildren().remove(container);
+                        if(!reference.stopFlag){
+                            zombieInRowArray.forEach(zombie -> {
+                                if(container.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
+                                    zombie.movementFlag=false;
+                                    health--;
+                                    if(health == 0){
+                                        anim.stop();
+                                        zombie.movementFlag=true;
+                                        zombieTime.cancel();
+                                        zombieTime.purge();
+                                        mainTimer.cancel();
+                                        mainTimer.purge();
+                                        timer.cancel();
+                                        timer.purge();
+                                        parent.getChildren().remove(container);
+                                    }
+                                    return;
                                 }
-                                return;
-                            }
-                        });
+                            });
+                        }
                     }
                 });
             }
@@ -397,7 +449,7 @@ class Zombie {
         Zombie thisZombie = this;
 
         TranslateTransition zombieTransition= new TranslateTransition();
-        zombieTransition.setDuration(Duration.seconds(25));
+        zombieTransition.setDuration(Duration.seconds(35));
         zombieTransition.setNode(zombieSpawner);
         zombieTransition.setToX(-570);
         zombieTransition.setCycleCount(TranslateTransition.INDEFINITE);
@@ -412,24 +464,117 @@ class Zombie {
                 javafx.application.Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        if(!movementFlag){
+                        if(reference.stopFlag){
                             zombieAnim.stop();
                         }
-                        else if(health==0) {
-                            zombieAnim.stop();
-                            gameGrid.getChildren().remove(zombieSpawner);
-                            timer.cancel();
-                            timer.purge();
-                            reference.removeZombie(thisZombie);
+                        else{
+                            if(!movementFlag){
+                                zombieAnim.stop();
+                            }
+                            else if(health==0) {
+                                zombieAnim.stop();
+                                gameGrid.getChildren().remove(zombieSpawner);
+                                timer.cancel();
+                                timer.purge();
+                                reference.removeZombie(thisZombie);
+                            }
+                            else if(movementFlag){
+                                zombieAnim.play();
+                            }
                         }
-                        else if(movementFlag){
-                            zombieAnim.play();
-                        }
-
                     }
                 });
             }
         }, 0, 200);
 
+    }
+}
+
+class LawnMower{
+    ImageView container;
+    Game reference;
+    int row;
+    Rectangle rect;
+
+    LawnMower(Game _reference, int _row){
+        reference = _reference;
+        row = _row;
+
+        rect = new Rectangle();
+        rect.setHeight(75);
+        rect.setWidth(50);
+        reference.gameGrid.add(rect,0,row);
+        rect.setVisible(false);
+
+        container = new ImageView();
+        Image lawnMower = new Image(".\\sample\\Img_Assets\\lawnmower.png", 107,95,true,true);
+        container.setImage(lawnMower);
+        container.setFitWidth(107);
+        container.setTranslateX(-12);
+        container.setTranslateY(-5);
+        reference.gameGrid.add(container,0,row);
+
+        lawnMowerActivate();
+        checkGameOver();
+    }
+
+    public void lawnMowerActivate(){
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                javafx.application.Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(!reference.stopFlag){
+                            reference.zombieGrid.get(row).forEach(zombie -> {
+                                if(container.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
+                                    timer.cancel();
+                                    timer.purge();
+
+                                    TranslateTransition lawnMowerMove = new TranslateTransition();
+                                    lawnMowerMove.setDuration(Duration.seconds(2));
+                                    lawnMowerMove.setNode(container);
+                                    lawnMowerMove.setToX(800);
+                                    lawnMowerMove.setCycleCount(1);
+
+                                    ParallelTransition lawnAnim = new ParallelTransition(lawnMowerMove);
+                                    lawnAnim.play();
+
+                                    reference.zombieGrid.get(row).forEach(killZombie -> {
+                                        killZombie.health=0;
+                                    });
+                                    return;
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        }, 0, 200);
+    }
+    public void checkGameOver(){
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                javafx.application.Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(!reference.stopFlag){
+                            reference.zombieGrid.get(row).forEach(zombie -> {
+                                if(rect.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
+                                    timer.cancel();
+                                    timer.purge();
+                                    reference.stopFlag=true;
+                                    reference.gameOverMenu.setVisible(true);
+                                    return;
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        }, 0, 200);
     }
 }
