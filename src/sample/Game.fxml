@@ -5,9 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.GaussianBlur?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -40,39 +37,24 @@
             <Image url="@Img_Assets/plants/sunflower.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-21.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+      <ImageView fx:id="cherryBomb" fitHeight="150.0" fitWidth="200.0" layoutX="-21.0" layoutY="200.0" onDragDetected="#handleDragDetection" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
          <image>
             <Image url="@Img_Assets/plants/cherryBomb.png" />
          </image>
-         <effect>
-            <Lighting diffuseConstant="0.67">
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant />
-               </light>
-            </Lighting>
-         </effect>
       </ImageView>
-      <ImageView fitHeight="62.0" fitWidth="100.0" layoutX="33.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" scaleX="1.1">
+      <ImageView fx:id="potatoBarrier" fitHeight="62.0" fitWidth="100.0" layoutX="33.0" layoutY="155.0" onDragDetected="#handleDragDetection" pickOnBounds="true" preserveRatio="true" scaleX="1.1">
          <image>
             <Image url="@Img_Assets/plants/potato.png" />
          </image>
-         <effect>
-            <Lighting diffuseConstant="0.58">
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant />
-               </light>
-            </Lighting>
-         </effect>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="142.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Img_Assets/plants/tokenCounter.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="doublePeaShooter" fitHeight="75.0" fitWidth="130.0" layoutX="16.0" layoutY="290.0" onDragDetected="#handleDragDetection" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img_Assets/plants/doublePeaShooterButton.png" />
          </image>
       </ImageView>
       <ImageView fx:id="peaShooterPlant" fitHeight="150.0" fitWidth="200.0" layoutX="-22.0" layoutY="68.0" onDragDetected="#handleDragDetection" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
