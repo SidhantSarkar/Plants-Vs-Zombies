@@ -196,7 +196,7 @@ public class Game implements Initializable {
             db.setContent(cb);
         }
         if(source.equals("sunFlowerPlant")){
-            Image img = new Image(".\\sample\\Img_Assets\\plants\\sunflower_instance.jpg",60,60,true,true);
+            Image img = new Image(".\\sample\\Img_Assets\\plants\\sunflower_instance.png",60,60,true,true);
 
             selected = "sunFlowerPlant";
             cb.putImage(img);
@@ -261,13 +261,13 @@ public class Game implements Initializable {
                     javafx.application.Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-                            if(!stopFlag){
+                            if(!stopFlag) {
                                 temp.startAnim(timer);
                             }
                         }
                     });
                 }
-            }, 0, 1800);
+            }, 0, 2000);
         }
 
     }
@@ -339,6 +339,7 @@ class Plant {
                         if(!reference.stopFlag){
                             zombieInRowArray.forEach(zombie -> {
                                 if(temp.getBoundsInParent().intersects(zombie.zombieSpawner.getBoundsInParent())){
+                                    System.out.println("Hit hua");
                                     temp.setRadius(0);
                                     temp.setTranslateZ(10);
                                     zombie.health--;
@@ -349,10 +350,11 @@ class Plant {
                                 }
                             });
                         }
+
                     }
                 });
             }
-        }, 0, 250);
+        }, 0, 201);
     }
 
     public void genSunAnim(Timer _timer){
