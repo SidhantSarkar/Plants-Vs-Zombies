@@ -1,43 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a461646-0876-4e12-a7c6-37c77bf92871" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sample/Img_Assets/plants/cherryInstance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/Img_Assets/plants/potatoInstance.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$4$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$5$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Img_Assets/plants/cherryBomb_instance.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Img_Assets/plants/doublePeaShooterButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Img_Assets/plants/doublePeaShooterButton.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Img_Assets/plants/potato_instance.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/LawnMower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$3$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Zombie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Img_Assets/plants/cherryBomb_instance.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Img_Assets/plants/doublePeaShooterButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Img_Assets/plants/doublePeaShooterButton.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Img_Assets/plants/potato_instance.jpg" beforeDir="false" />
+    <list default="true" id="4a461646-0876-4e12-a7c6-37c77bf92871" name="Default Changelist" comment="Merge branch 'master' of https://github.com/SidhantSarkar/PlantsVsZombies&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower$1$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower$2$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower$2.class&#10;#&#9;out/production/PlantsVsZombies/sample/LawnMower.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$1$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$2.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$3.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant$4$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Plant.class&#10;#&#9;out/production/PlantsVsZombies/sample/Zombie$1$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Zombie$1.class&#10;#&#9;out/production/PlantsVsZombies/sample/Zombie.class">
+      <change afterPath="$PROJECT_DIR$/src/sample/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PlantsVsZombies/sample/Plant$1$1.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,5 +81,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
