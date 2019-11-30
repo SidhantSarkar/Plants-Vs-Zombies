@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChooseLevel">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChooseLevel">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -42,9 +42,9 @@
             </Pane>
             <FlowPane hgap="20.0" layoutX="15.0" layoutY="106.0" prefHeight="388.0" prefWidth="770.0">
                <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="level1" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#level1Game" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Img_Assets/tile.png" />
                            </image>
@@ -56,9 +56,9 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                  <Pane id="level2" fx:id="level2" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#level2Game" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Img_Assets/tile.png" />
                            </image>
@@ -69,10 +69,20 @@
                            </font>
                         </Label>
                      </children>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#867d7d" />
+                           </light>
+                        </Lighting>
+                     </effect>
                   </Pane>
-                  <Pane layoutX="210.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                  <Pane id="level3" fx:id="level3" layoutX="210.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#level3Game" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Img_Assets/tile.png" />
                            </image>
@@ -94,9 +104,9 @@
                         </Lighting>
                      </effect>
                   </Pane>
-                  <Pane layoutX="410.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="level4" layoutX="410.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#level4Game" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Img_Assets/tile.png" />
                            </image>
@@ -121,9 +131,9 @@
                         </Lighting>
                      </effect>
                   </Pane>
-                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="level5" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#level5Game" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Img_Assets/tile.png" />
                            </image>
