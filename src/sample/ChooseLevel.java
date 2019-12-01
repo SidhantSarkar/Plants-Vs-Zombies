@@ -17,6 +17,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.nio.file.*;
 public class ChooseLevel implements Initializable {
+    public static int userSelectedLevel=-1;
+
     @FXML
     private Pane level1;
 
@@ -92,6 +94,7 @@ public class ChooseLevel implements Initializable {
 
     @FXML
     public void level1Game(Event mouseEvent) throws IOException {
+        userSelectedLevel=1;
         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
         stage.setScene(new Scene(root));
@@ -99,36 +102,40 @@ public class ChooseLevel implements Initializable {
 
     @FXML
     public void level2Game(Event mouseEvent) throws IOException {
-//        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-//        Parent root = FXMLLoader.load(getClass().getResource("Game2.fxml"));
-//        stage.setScene(new Scene(root));
-          System.out.println("LEVEL 2");
+        userSelectedLevel=2;
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        stage.setScene(new Scene(root));
+//          System.out.println("LEVEL 2");
 
     }
 
     @FXML
     public void level3Game(Event mouseEvent) throws IOException {
-//        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-//        Parent root = FXMLLoader.load(getClass().getResource("Game3.fxml"));
-//        stage.setScene(new Scene(root));
+        userSelectedLevel=3;
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        stage.setScene(new Scene(root));
         System.out.println("LEVEL 3");
 
     }
 
     @FXML
     public void level4Game(Event mouseEvent) throws IOException {
-//        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-//        Parent root = FXMLLoader.load(getClass().getResource("Game4.fxml"));
-//        stage.setScene(new Scene(root));
+        userSelectedLevel=4;
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        stage.setScene(new Scene(root));
         System.out.println("LEVEL 4");
 
     }
 
     @FXML
     public void level5Game(Event mouseEvent) throws IOException {
-//        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-//        Parent root = FXMLLoader.load(getClass().getResource("Game5.fxml"));
-//        stage.setScene(new Scene(root));
+        userSelectedLevel=5;
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        stage.setScene(new Scene(root));
         System.out.println("LEVEL 5");
     }
 }

@@ -281,7 +281,7 @@
                   <Font name="Gill Sans Ultra Bold Condensed" size="27.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="314.0" layoutY="317.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="SAVE GAME" textAlignment="CENTER" textFill="#97db2e">
+            <Button alignment="CENTER" graphicTextGap="5.0" layoutX="314.0" layoutY="317.0" maxHeight="54.0" maxWidth="285.0" mnemonicParsing="false" onAction="#saveGame" prefHeight="54.0" prefWidth="285.0" style="-fx-background-color: #74674E; -fx-border-color: #472F22; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="SAVE GAME" textAlignment="CENTER" textFill="#97db2e">
                <effect>
                   <DropShadow />
                </effect>
